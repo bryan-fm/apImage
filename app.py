@@ -45,9 +45,12 @@ def post_something():
 # A welcome message to test our server
 @app.route('/')
 def index():
-    response = {}
-    response["MESSAGE"] = randomduck()
-    return jsonify(response)
+    return jsonify( {'id': 0,
+     'title':  randomduck(),
+     'author': 'Vernor Vinge',
+     'first_sentence': 'The coldsleep itself was dreamless.',
+     'year_published': '1992'},
+    )
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
@@ -65,3 +68,5 @@ def randomduck():
     patos.append("https://thumbs.dreamstime.com/z/pato-selvagem-masculino-no-mar-b%C3%A1ltico-35389453.jpg")
 
     return random.choice(patos)
+
+About
