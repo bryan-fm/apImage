@@ -46,23 +46,22 @@ def post_something():
 @app.route('/')
 def index():
     response = {}
-    response["MESSAGE"] = "f" + random()
+    response["MESSAGE"] = randomduck()
     return jsonify(response)
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)
 
-def random():
+def randomduck():
     patos = []
-    patos[0] = "https://thumbs.dreamstime.com/b/pato-com-crista-39453042.jpg"
-    patos[1] = "https://thumbs.dreamstime.com/z/um-pato-com-um-topete-63143800.jpg"
-    patos[2] = "https://thumbs.dreamstime.com/z/um-pato-com-um-topete-63143800.jpg"
-    patos[3] = "https://thumbs.dreamstime.com/z/pato-adornado-de-vibra%C3%A7%C3%A3o-1272298.jpg"
-    patos[4] = "https://thumbs.dreamstime.com/z/bando-de-pato-tufado-mergulhador-branco-preto-com-olhos-amarelos-flutuando-em-lago-verde-na-%C3%A1ustria-europa-um-patos-tufados-156694258.jpg"
-    patos[5] = "https://thumbs.dreamstime.com/z/pato-adornado-f%C3%AAmea-com-os-filhotes-no-lago-124599320.jpg"
-    patos[6] = "https://thumbs.dreamstime.com/z/pato-masculino-do-pato-selvagem-96709436.jpg"
-    patos[7] = "https://thumbs.dreamstime.com/z/pato-de-borracha-20347931.jpg"
-    patos[8] = "https://thumbs.dreamstime.com/z/pato-selvagem-masculino-no-mar-b%C3%A1ltico-35389453.jpg"
+    patos.append("https://thumbs.dreamstime.com/z/um-pato-com-um-topete-63143800.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/um-pato-com-um-topete-63143800.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/pato-adornado-de-vibra%C3%A7%C3%A3o-1272298.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/bando-de-pato-tufado-mergulhador-branco-preto-com-olhos-amarelos-flutuando-em-lago-verde-na-%C3%A1ustria-europa-um-patos-tufados-156694258.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/pato-adornado-f%C3%AAmea-com-os-filhotes-no-lago-124599320.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/pato-masculino-do-pato-selvagem-96709436.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/pato-de-borracha-20347931.jpg")
+    patos.append("https://thumbs.dreamstime.com/z/pato-selvagem-masculino-no-mar-b%C3%A1ltico-35389453.jpg")
 
     return random.choice(patos)
