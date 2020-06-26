@@ -44,6 +44,7 @@ def post_something():
 # A welcome message to test our server
 @app.route('/')
 def index():
+    response = {}
     response["MESSAGE"] = f"Ticaracatica"
     return jsonify(response)
 
